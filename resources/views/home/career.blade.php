@@ -37,7 +37,6 @@
                         ​
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -70,7 +69,6 @@
                     </div>
                 </div>
 
-
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" id="UX / UI Design" onClick="reply_click(this.id)">
                     <div class="career-part ">
                         <div class="career_heading mt-0">UX / UI Design</div>
@@ -79,7 +77,6 @@
                         <a class="btn_carr mobile_responsive" id="UX / UI Design" onClick="reply_click(this.id)" href="#mobile_responsive_scroll">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
 
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" id="PHP Development" onClick="reply_click(this.id)">
                     <div class="career-part ">
@@ -90,7 +87,6 @@
                     </div>
                 </div>
 
-
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3" id="App Development" onClick="reply_click(this.id)">
                     <div class="career-part ">
                         <div class="career_heading mt-0">App Development</div>
@@ -99,7 +95,6 @@
                         <a class="btn_carr mobile_responsive" id="App Development" onClick="reply_click(this.id)" href="#mobile_responsive_scroll">Apply Now <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
 
             </div>
             <div class="row career_job_row" data-aos="fade-up" id="mobile_responsive_scroll">
@@ -119,14 +114,14 @@
                         <div class="home-heading">Fill the Form and Apply for <span id="test22">Wordpress Development</span></div>
 
 
-                        <div class="wpcf7 no-js"  lang="en-US" dir="ltr">
+                        <div class="wpcf7 no-js" lang="en-US" dir="ltr">
                             <div class="screen-reader-response">
                                 <p role="status" aria-live="polite" aria-atomic="true"></p>
                                 <ul></ul>
                             </div>
                             <form action="{{url('career_application/send')}}" method="post" class="wpcf7-form init" aria-label="Contact form" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
-                             @csrf
-                            <!-- <div style="display: none;">
+                                @csrf
+                                <!-- <div style="display: none;">
                                     <input type="hidden" name="_wpcf7" value="512" />
                                     <input type="hidden" name="_wpcf7_version" value="5.9.3" />
                                     <input type="hidden" name="_wpcf7_locale" value="en_US" />
@@ -136,30 +131,51 @@
                                 </div> -->
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="text-385"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="First name" value="" type="text" name="username" /></span>
+                                        <p>
+                                            <span class="wpcf7-form-control-wrap" data-name="text-385">
+                                                <input size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="First name" value="" type="text" name="username" />
+                                                @if ($errors->has('username'))
+                                                <span class="text-danger">{{ $errors->first('username') }}</span>
+                                                @endif
                                         </p>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="email-952"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" /></span>
+                                        <p>
+                                            <input size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" />
+                                            @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="tel-127"><input size="40" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" aria-required="true" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="contact" /></span>
+                                        <p>
+
+                                            <input size="40" class=" form-control" aria-required="true" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="contact" />
+                                            @if ($errors->has('contact'))
+                                            <span class="text-danger">{{ $errors->first('contact') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="menu-20"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" name="menu_language">
-                                                    <option value="Select">Select</option>
-                                                    <option value="Wordpress Development">Wordpress Development</option>
-                                                    <option value="UX / UI Design">UX / UI Design</option>
-                                                    <option value="App Development">App Development</option>
-                                                    <option value="PHP Development">PHP Development</option>
-                                                </select></span>
+                                        <p>
+                                            <select class=" form-control" aria-required="true" aria-invalid="false" name="menu_language">
+                                                <option value="Select">Select</option>
+                                                <option value="Wordpress Development">Wordpress Development</option>
+                                                <option value="UX / UI Design">UX / UI Design</option>
+                                                <option value="App Development">App Development</option>
+                                                <option value="PHP Development">PHP Development</option>
+                                            </select>
+                                            @if ($errors->has('menu_language'))
+                                            <span class="text-danger">{{ $errors->first('menu_language') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <p><label>Upload Your CV</label><br />
-                                            <span class="wpcf7-form-control-wrap" data-name="file-495"><input size="40" class="wpcf7-form-control wpcf7-file wpcf7-validates-as-required form-control" accept="audio/*,video/*,image/*" aria-required="true" aria-invalid="false" type="file" name="resume" /></span>
+                                            <input size="40" class=" form-control" accept="audio/*,video/*,image/*" aria-required="true" aria-invalid="false" type="file" name="resume" />
+                                            @if ($errors->has('resume'))
+                                            <span class="text-danger">{{ $errors->first('resume') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                 </div>
@@ -190,18 +206,12 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="benefits_content comm-para">
                         <div class="mt-0 benefits_heading">Remote Work</div>
                         <p>We offer 100% remote work opportunities and have setup the right communication strategies, and technology solutions to stay connected.</p>
                     </div>
                 </div>
-
-
-
 
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="benefits_content comm-para">
@@ -210,18 +220,12 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="benefits_content comm-para">
                         <div class="mt-0 benefits_heading">Flexible Schedule</div>
                         <p>We offer flexible schedule solutions and use the best project management workflows to keep tasks and projects on target.</p>
                     </div>
                 </div>
-
-
-
 
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="benefits_content comm-para">
@@ -230,18 +234,12 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                     <div class="benefits_content comm-para">
                         <div class="mt-0 benefits_heading">Time Off + Work Life Balance</div>
                         <p>We are a high performance team that works hard and goes home on time every workday and we offer unlimited time off.</p>
                     </div>
                 </div>
-
-
-
 
             </div>
         </div>

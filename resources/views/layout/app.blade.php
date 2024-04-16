@@ -291,14 +291,6 @@
 
     <script src="https://imminentsoftwares.com/wp-content/plugins/bluehost-wordpress-plugin/vendor/newfold-labs/wp-module-ecommerce/includes/wpnavbar.js?ver=1.0" id="nfd_wpnavbar_setting-js"></script>
     <script src="https://imminentsoftwares.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.9.3" id="swv-js"></script>
-    <script id="contact-form-7-js-extra">
-        // var wpcf7 = {
-        //     "api": {
-        //         "root": "https:\/\/imminentsoftwares.com\/wp-json\/",
-        //         "namespace": "contact-form-7\/v1"
-        //     }
-        // };
-    </script>
     <script src="https://imminentsoftwares.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.9.3" id="contact-form-7-js"></script>
     <!--[if lte IE 11]>
 <script src="https://imminentsoftwares.com/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.4.0" id="generate-classlist-js"></script>
@@ -327,7 +319,7 @@
     </script>
     <script src="https://imminentsoftwares.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=3.3.1" id="megamenu-js"></script>
     <script src="https://imminentsoftwares.com/wp-content/plugins/megamenu-pro/assets/public.js?ver=2.2.4" id="megamenu-pro-js"></script>
-
+<!-- <script src="{{asset('assets/js/script.js')}}"></script> -->
 </body>
 
 </html>

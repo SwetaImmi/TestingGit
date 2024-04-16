@@ -48,53 +48,51 @@
                                 </div>
                                 <form action="{{url('contact_us/send')}}" method="post">
                                     @csrf
-                                    <!-- <div style="display: none;">
-                                        <input type="text" name="_wpcf7" value="460" />
-                                        <input type="hidden" name="_wpcf7_version" value="5.9.3" />
-                                        <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f460-o1" />
-                                        <input type="hidden" name="_wpcf7_container_post" value="0" />
-                                        <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                                    </div> -->
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <p>
-                                                <span class="wpcf7-form-control-wrap" data-name="text-862">
-                                                    <input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="First name" value="true" type="text" name="firstname" />
-                                                </span>
+                                                <input size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="First name" type="text" name="firstname" />
+                                                @if ($errors->has('firstname'))
+                                                <span class="text-danger">{{ $errors->first('firstname') }}</span>
+                                                @endif
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <p><span class="wpcf7-form-control-wrap" data-name="email-125">
-                                                    <input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" /></span>
-                                            </p>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <p>
-                                                <span class="wpcf7-form-control-wrap" data-name="tel-121">
-                                                    <input size="40" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" aria-required="true" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="contact" />
-                                                </span>
+                                            <input size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" />
+                                            @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                            @endif
                                             </p>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <p>
-                                                <span class="wpcf7-form-control-wrap" data-name="menu-965">
-                                                    <select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" name="menu_language">
-                                                        <option value="Select">Select</option>
-                                                        <option value="Wordpress Developer">Wordpress Developer</option>
-                                                        <option value="PHP Developer">PHP Developer</option>
-                                                        <option value="UX/UI Design">UX/UI Design</option>
-                                                        <option value="Application Developer">Application Developer</option>
-                                                    </select>
-                                                </span>
+                                                <input size="40" class="form-control" aria-required="true" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="contact" />
+                                                @if ($errors->has('contact'))
+                                                <span class="text-danger">{{ $errors->first('contact') }}</span>
+                                                @endif
+                                            </p>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <p>
+                                                <select class="form-control" aria-required="true" aria-invalid="false" name="menu_language">
+                                                    <option value="Select">Select</option>
+                                                    <option value="Wordpress Developer">Wordpress Developer</option>
+                                                    <option value="PHP Developer">PHP Developer</option>
+                                                    <option value="UX/UI Design">UX/UI Design</option>
+                                                    <option value="Application Developer">Application Developer</option>
+                                                </select>
+                                                @if ($errors->has('menu_language'))
+                                                <span class="text-danger">{{ $errors->first('menu_language') }}</span>
+                                                @endif
                                             </p>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <p>
-                                                <span class="wpcf7-form-control-wrap" data-name="textarea-345">
-                                                    <textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Message" name="message_query">
+                                                <textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Message" name="message_query">
                                                     </textarea>
-                                                </span>
+                                                @if ($errors->has('message_query'))
+                                                <span class="text-danger">{{ $errors->first('message_query') }}</span>
+                                                @endif
                                             </p>
                                         </div>
                                     </div>

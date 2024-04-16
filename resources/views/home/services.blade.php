@@ -322,34 +322,44 @@
                                 <p role="status" aria-live="polite" aria-atomic="true"></p>
                                 <ul></ul>
                             </div>
-                            <form action="/services/#wpcf7-f77-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
-                                <div style="display: none;">
-                                    <input type="hidden" name="_wpcf7" value="77" />
-                                    <input type="hidden" name="_wpcf7_version" value="5.9.3" />
-                                    <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f77-o1" />
-                                    <input type="hidden" name="_wpcf7_container_post" value="0" />
-                                    <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                                </div>
+                            <form action="{{url('contact_us/send')}}" method="post">
+                                @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="text-772"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="First name" value="" type="text" name="text-772" /></span>
+                                        <p>
+                                            <input size="40" class=" form-control" aria-required="true" aria-invalid="false" placeholder="First name" value="" type="text" name="firstname" />
+                                            @if ($errors->has('firstname'))
+                                            <span class="text-danger">{{ $errors->first('firstname') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="tel-890"><input size="40" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" aria-required="true" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="tel-890" /></span>
+                                        <p>
+                                            <input size="40" class=" form-control" aria-required="true" aria-invalid="false" placeholder="Phone Number" value="" type="tel" name="contact" />
+                                            @if ($errors->has('contact'))
+                                            <span class="text-danger">{{ $errors->first('contact') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <p><span class="wpcf7-form-control-wrap" data-name="email-627"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email-627" /></span>
+                                        <p>
+                                            <input size="40" class=" form-control" aria-required="true" aria-invalid="false" placeholder="Email Address" value="" type="email" name="email" />
+                                            @if ($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                            @endif
                                         </p>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <p><span class="wpcf7-form-control-wrap" data-name="textarea-539"><textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Message" name="textarea-539"></textarea></span>
+                                    <p>
+                                        <textarea cols="40" rows="10" class=" form-control" aria-required="true" aria-invalid="false" placeholder="Message" name="message_query"></textarea>
+                                        @if ($errors->has('message_query'))
+                                        <span class="text-danger">{{ $errors->first('message_query') }}</span>
+                                        @endif
                                     </p>
                                 </div>
-                                <p><input class="wpcf7-form-control wpcf7-submit has-spinner mt-4 defult-btn blue-solid-btn btn-animation btn btn-primary" type="submit" value="Submit" />
+                                <p>
+                                    <input class="wpcf7-form-control wpcf7-submit has-spinner mt-4 defult-btn blue-solid-btn btn-animation btn btn-primary" type="submit" value="Submit" />
                                 </p>
                                 <div class="wpcf7-response-output" aria-hidden="true"></div>
                             </form>

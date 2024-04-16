@@ -11,8 +11,8 @@
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <a class="text-white" href="/cdn-cgi/l/email-protection#bed7d0d8d1fed7d3d3d7d0dbd0cacdd1d8cac9dfccdbcd90ddd1d3">
-                                    <span><span class="__cf_email__" data-cfemail="543d3a323b143d39393d3a313a20273b322023352631277a373b39">[email&#160;protected]</span></span></a>
+                                <a class="text-white" href="info@imminentsoftwares.com">
+                                    <span><span class="__cf_email__" data-cfemail="543d3a323b143d39393d3a313a20273b322023352631277a373b39">info@imminentsoftwares.com</span></span></a>
                             </li>
                         </ul>
                     </div>
